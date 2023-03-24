@@ -1,3 +1,4 @@
 # PokeMarket
+<<<<<<< HEAD
 
-TEST - by John Jung
+Test
