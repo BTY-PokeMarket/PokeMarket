@@ -4,8 +4,9 @@
         <% if (poke) { %>
           <div class="panel panel-default">
             <div class="panel-heading text-center">
-              <h2><% poke.results.forEach ((p) => { %></h2>
+              <h2><% poke.forEach ((p) => { %></h2>
               <%= p.name %>
+              <a href="pokemon/details">Pokemon Details</a>
               <% }) %>
             </div> 
           </div>

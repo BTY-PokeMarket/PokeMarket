@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<h1>Details Page</h1>
+
+<% if (pokemon) { %>
+    <p> Displaying Pokemon Info</p>
+    <%= pokemon.flavor_text_entries[0].flavor_text %>
+  <% } %>
+
+
+<%- include('../partials/footer') %>
