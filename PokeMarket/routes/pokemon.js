@@ -3,10 +3,7 @@ var router = express.Router();
 const pokeCtrl = require('../controllers/pokemons')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.redirect('/pokemon')
-})
-
+router.get('/', pokeCtrl.index)
 
 
 module.exports = router;
