@@ -8,16 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
     <title>PokeMarket</title>
+        <nav>
+            <% if (user) { %>
+            <a href="/logout">Log Out</a> 
+            <% } else { %>
+                <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+              <% } %>
+        </nav>
+     <h1>PokeMarket</h1>
 </head>
-<body>
-    <nav>
-        <a href=""></a> 
-        | 
-        <a href=""></a> 
-        |  
-        <a href=""></a>
-    </nav>
-    <h1>PokeMarket</h1>
-
-</body>
-</html>
