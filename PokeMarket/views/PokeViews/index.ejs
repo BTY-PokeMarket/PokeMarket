@@ -12,9 +12,9 @@
             <tbody>
               <% poke.forEach ((p) => { %>
                 <tr>
-                <td><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png"></td>
+                <td></td>
                 <td><%= p.name %></td>
-              <td><a href="pokemon/<%= p.id %>/details">Details</a></td>
+              <td><a href="pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png"></a></td>
               <td></td>
               <% }) %>
               </tr>

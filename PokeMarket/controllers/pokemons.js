@@ -1,4 +1,4 @@
- const ROOT_URL = 'https://pokeapi.co/api/v2/pokemon'
+const ROOT_URL = 'https://pokeapi.co/api/v2/pokemon'
 const Pokemon = require('../models/pokemon')
 
 
