@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const pokedexSchema = new Schema({
     name: String,
+    pokedexName: String,
     numberOfPokemon: Number,
     totolCost: Number,
     pokemon: [{
