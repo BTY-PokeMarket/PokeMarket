@@ -6,10 +6,17 @@
     <tr>
       <th>Trainer Name</th>
       <th>Pokedex</th>
-      <th></th>
+      <th>Go to Page</th>
     </tr>
   </thead>
   <tbody>
+    <% trainers.forEach ((t) => { %>
+      <tr>
+      <td><%= t.userName %></td>
+      <td><%= t.pokedexName %></td>
+     <td><a href="/pokedex/<%= t._id %>">DETAILS</a></td>
+    <% }) %>
+    </tr>
   </tbody>
 </table>
 

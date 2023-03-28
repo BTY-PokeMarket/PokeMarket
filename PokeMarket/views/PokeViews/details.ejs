@@ -4,10 +4,14 @@
 
 <% if (pokemon) { %>
     <p> Displaying Pokemon Info</p>
-    <%= pokemon.flavor_text_entries[0].flavor_text %>
+    <%= pokemon.flavor_text_entries[1].flavor_text %>
     <% if (sprite) { %>
     <img src="<%= sprite.sprites.front_default%>">
   <% } %>
+  <%=   %>
   <% } %>
+
+  <!-- Create a button to add pokemon -->
+  <!-- Then should populate to my pokedex -->
 
 <%- include('../partials/footer') %>

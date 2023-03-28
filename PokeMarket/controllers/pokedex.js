@@ -10,7 +10,7 @@ module.exports = {
 async function show(req, res) {
     console.log("Entering function show")
     const pokedex = await Pokedex.findById(req.params.id);
-    res.render('/pokedex/show', {pokedex})
+    res.render('pokedex/show' , {pokedex})
 }
 
 
