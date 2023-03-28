@@ -2,6 +2,7 @@ require('dotenv').config();
 require('./config/database');
 
 const Pokemon = require('./models/pokemon');
+const Pokedex = require('./models/pokedex');
 
 // For better organization, the seed data is being stored in a separate data.js module
 const data = require('./data');
@@ -10,10 +11,11 @@ const data = require('./data');
 (async function() {
   // Save the promises (or call right in the array if feeling frisky)
   const p1 = Pokemon.deleteMany({});
+  const p2 = Pokedex.deleteMany({});
   
   // Promise.all will return a single promise that resolves
   // only after all of the array's promises resolve
-  let results = await Promise.all([p1]);
+  let results = await Promise.all([p1,p2]);
   // results will be an array of result objects!
   console.log(results);
 

@@ -10,11 +10,13 @@
     <title>PokeMarket</title>
         <nav>
             <% if (user) { %>
+            <a href="/pokemon">HomePage</a>
             <a href="/PokeViews/trainers">All Trainers</a>
-            <a href="">My Pokedex</a>
+            <a href="/pokedex/new">My Pokedex</a>
             <a href="/logout">Log Out</a> 
             <% } else { %>
-            <a href="/PokeViews/trainers">All Trainers</a>
+                <a href="/pokemon">HomePage</a>
+                <a href="/PokeViews/trainers">All Trainers</a>
                 <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
               <% } %>
         </nav>
