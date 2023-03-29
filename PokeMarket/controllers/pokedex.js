@@ -7,12 +7,26 @@ module.exports = {
     new: newPokedex,
     create,
     addPokemon,
-    showPokemons
+    showPokemons,
+    pokemonDetail
 }
+async function pokemonDetail(req,res){
+    try{
+        console.log("entering pokedex pokemon details")
+        
+         } catch (err){
+           console.log(err);
+           res.sendStatus(500);
+         }
+    res.render('pokedex/details')
+}
+
 async function showPokemons(req,res){
     console.log('ENTER HERE');
-    const availablePokemon = await Pokemon.find();
-    res.render('pokedex/pokemon', {availablePokemon})
+    const availablePokemon = await Pokemon.find({ dex: { $gt: 3 } });
+    const pokedex = await Pokedex.findById(req.params.id);
+    console.log(req.params);
+    res.render('pokedex/pokemon', {availablePokemon, pokedex})
 }
 
 async function addPokemon(req,res){

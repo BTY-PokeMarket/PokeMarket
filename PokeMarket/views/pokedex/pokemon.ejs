@@ -1,24 +1,8 @@
 <%- include('../partials/header') %>
 <body>
         <% if (availablePokemon) { %>
-          <table>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Pokemon</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
               <% availablePokemon.forEach ((p) => { %>
-                <tr>
-                <td></td>
-                <td><%= p.name %></td>
-              <td><a href="pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png"></a></td>
-              <td></td>
+              <a href="<%=pokedex._id%>/pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png"></a>
               <% }) %>
-              </tr>
         <% } %>
-      </tbody>
-      </table>
 <%- include('../partials/footer') %>
