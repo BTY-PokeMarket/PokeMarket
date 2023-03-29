@@ -1,8 +1,12 @@
 <%- include('../partials/header') %>
 <% pokedex.pokemon.forEach(function(p) { %>
     <%= p.name %>
-   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
-   <br>
+    <a href="<%= pokedex.id %>/pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
+   </a>
+    <br>
+   <form action="/pokedex/<%= p.id %>?_method=DELETE" method="POST">
+    <button type="submit">X</button>
+  </form>
    <% }) %>
 
 

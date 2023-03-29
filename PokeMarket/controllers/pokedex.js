@@ -9,8 +9,27 @@ module.exports = {
     create,
     addPokemon,
     showPokemons,
-    pokemonDetail
+    pokemonDetail,
+    delete: deletePokemon
 }
+
+async function deletePokemon (req, res) {
+    console.log('enteringDELETEPOKEMON')
+    const pokedex = await Pokedex.findOne({ user: req.user.id });
+    thisPokemon = pokedex.pokemon
+    // thisPokemon.findOne({'pokemon._id' : req.params.id})
+
+    console.log(thisPokemon)
+    console.log(req.params.id)
+    thisPokemon.remove(req.params.id)
+    pokedex.save().then(() => {
+        res.redirect(`/pokedex/${pokedex._id}`)
+    }).catch(function(err) {
+        return next(err)
+    })
+    
+}
+
 async function pokemonDetail(req,res){
     try{
         //  const pokedex
@@ -18,13 +37,18 @@ async function pokemonDetail(req,res){
         //     pokedex = req.params.id
         // }
         // else vvvvvvvvvvvvvv
-        const pokedex = await Pokedex.find({ user: req.user.id });
+        const pokedex = await Pokedex.findOne({ user: req.user.id });
+        console.log(pokedex)
+        console.log(pokedex.pokemon)
         const foundPokemon = await Pokemon.findById(req.params.id);
+        console.log(foundPokemon)
         const pokemon = await fetch(`${ROOT_URL}-species/${foundPokemon.dex}`)
         .then(res => res.json())
         const sprite = await fetch(`${ROOT_URL}/${foundPokemon.dex}`)
         .then(res => res.json())
-        res.render('pokedex/details', {pokemon, sprite, pokedex})
+        
+        
+        res.render('pokedex/details', {pokemon, sprite, pokedex, foundPokemon})
          } catch (err){
            console.log(err);
            res.sendStatus(500);
@@ -35,7 +59,7 @@ async function pokemonDetail(req,res){
 async function showPokemons(req,res){
     console.log('ENTER Show Pokemon');
     const pokedex = await Pokedex.findById(req.params.id);
-    const availablePokemon = await Pokemon.find({ _id: { $nin : pokedex.pokemon } });
+    const availablePokemon = await Pokemon.find({ _id: { $nin : pokedex.pokemon }, value : { $lt: pokedex.pokecoins }}).sort('dex');
     res.render('pokedex/pokemon', {availablePokemon, pokedex})
 }
 
@@ -46,10 +70,8 @@ async function addPokemon(req,res){
     console.log(pokedex)
     const foundPokemon = await Pokemon.findOne({dex: req.body.pokemonId})
     const myPokedex = pokedex.pokemon
-    console.log(myPokedex)
     myPokedex.push(foundPokemon);
-    pokecoins = pokedex.pokecoins 
-    console.log(pokecoins) //50
+    pokedex.pokecoins -= foundPokemon.value;
     await pokedex.save();
     res.redirect(`/pokedex/${pokedex._id}`)
     } catch (err) {
@@ -57,7 +79,7 @@ async function addPokemon(req,res){
     }
 }
 
-async function show(req, res) {
+async function show(req, res, next) {
     console.log("Entering function show")
     const pokedex = await Pokedex.findById(req.params.id).populate('pokemon');
     const pokemon = await Pokemon.find();

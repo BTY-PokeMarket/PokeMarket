@@ -3,6 +3,8 @@ var router = express.Router();
 const dexCtrl = require('../controllers/pokedex')
 
 // localhost:3000/pokedex
+router.delete('/:id', dexCtrl.delete);
+
 router.post('/:id', dexCtrl.addPokemon)
 router.post('/', dexCtrl.create)
 
