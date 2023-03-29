@@ -12,7 +12,9 @@
             <% if (user) { %>
             <a href="/pokemon">HomePage</a>
             <a href="/trainers">All Trainers</a>
+            <% if (!pokedex) { %>
             <a href="/pokedex/new">Add Pokedex</a>
+            <% } %>
             <a href="/logout">Log Out</a> 
             <% } else { %>
                 <a href="/pokemon">HomePage</a>
