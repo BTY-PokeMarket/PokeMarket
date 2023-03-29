@@ -9,8 +9,7 @@
 <br>
 <% pokedex.pokemon.forEach(function(p) { %>
    <%= p.name %>
-   <a href="<%=pokedex._id%>/pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
-   </a>
+   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
    <br>
    <% }) %>
 
