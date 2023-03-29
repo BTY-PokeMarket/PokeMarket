@@ -13,6 +13,11 @@ module.exports = {
 }
 async function pokemonDetail(req,res){
     try{
+        //  const pokedex
+        //  if(pokedexOfTrainer does not equal logged in user id){
+        //     pokedex = req.params.id
+        // }
+        // else vvvvvvvvvvvvvv
         const pokedex = await Pokedex.find({ user: req.user.id });
         const foundPokemon = await Pokemon.findById(req.params.id);
         const pokemon = await fetch(`${ROOT_URL}-species/${foundPokemon.dex}`)
@@ -29,8 +34,8 @@ async function pokemonDetail(req,res){
 
 async function showPokemons(req,res){
     console.log('ENTER Show Pokemon');
-    const availablePokemon = await Pokemon.find({ dex: { $gt: 0 } });
     const pokedex = await Pokedex.findById(req.params.id);
+    const availablePokemon = await Pokemon.find({ _id: { $nin : pokedex.pokemon } });
     res.render('pokedex/pokemon', {availablePokemon, pokedex})
 }
 
