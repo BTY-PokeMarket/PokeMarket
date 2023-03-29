@@ -37,16 +37,14 @@ async function showPokemons(req,res){
 async function addPokemon(req,res){
     console.log('Entering Add Pokemon');
     try{
-    const pokedex = await Pokedex.find({ user: req.user.id });
+    const pokedex = await Pokedex.findOne({ user: req.user.id });
     console.log(pokedex)
-    const foundPokemon = await Pokemon.find({dex: req.body.pokemonId})
+    const foundPokemon = await Pokemon.findOne({dex: req.body.pokemonId})
     const myPokedex = pokedex.pokemon
     console.log(myPokedex)
     myPokedex.push(foundPokemon);
     await pokedex.save();
-
-
-    res.redirect(`/pokemon`)
+    res.redirect(`/pokedex/${pokedex._id}`)
     } catch (err) {
         console.log(err)
     }
@@ -56,7 +54,9 @@ async function show(req, res) {
     console.log("Entering function show")
     const pokedex = await Pokedex.findById(req.params.id).populate('pokemon');
     const pokemon = await Pokemon.find();
-    res.render('pokedex/show' , {pokedex, pokemon})
+    const availablePokemon = await Pokedex.find({ pokemon });
+    
+    res.render('pokedex/show' , {pokedex, pokemon, availablePokemon})
 }
 
 
