@@ -43,6 +43,8 @@ async function addPokemon(req,res){
     const myPokedex = pokedex.pokemon
     console.log(myPokedex)
     myPokedex.push(foundPokemon);
+    pokecoins = pokedex.pokecoins 
+    console.log(pokecoins) //50
     await pokedex.save();
     res.redirect(`/pokedex/${pokedex._id}`)
     } catch (err) {

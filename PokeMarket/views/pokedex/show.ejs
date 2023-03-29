@@ -1,18 +1,18 @@
 <%- include('../partials/header') %>
-<p>HELLO POKEDEX<p>
-<%= pokedex.pokedexName %>
+<% pokedex.pokemon.forEach(function(p) { %>
+    <%= p.name %>
+   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
+   <br>
+   <% }) %>
 
+
+
+<%= pokedex.pokedexName %>
 <% if (pokedex.userName === user.name) { %>
 <button ><a href="/pokedex/<%= pokedex.id%>/pokemon">Add Pokemon</a></button>
 <br>
 <br>
 <br>
-<% pokedex.pokemon.forEach(function(p) { %>
-   <%= p.name %>
-   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
-   <br>
-   <% }) %>
-
 <% } %>
 
 <%- include('../partials/footer') %>
