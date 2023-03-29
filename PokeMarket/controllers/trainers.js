@@ -9,9 +9,17 @@ async function index(req, res, next){
     try {
     console.log('getting to trainers index');
     const trainers = await Pokedex.find({});
-    const pokedex = await Pokedex.findOne({ user: req.user.id });
-    console.log(pokedex);
-    res.render('trainers/index' , {trainers , pokedex})
+    // if statement where if user is not logged in
+    // pokedex = something
+    // else
+    // pokedex = vvvvvv
+    // if(req.user){
+    // const pokedex = await Pokedex.findOne({ user: req.user.id });
+    // } else {
+    //     // const pokedex = 0;
+    // }
+    console.log(trainers);
+    res.render('trainers/index' , {trainers})
     } catch(err){
         console.log(err)
         res.sendStatus(500);

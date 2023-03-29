@@ -91,6 +91,7 @@ async function show(req, res, next) {
 
 
 async function newPokedex(req, res){
+    const pokedex = await Pokedex.findOne({ user: req.user.id });
     res.render('pokedex/new')
 }
 

@@ -20,4 +20,14 @@
   </tbody>
 </table>
 
+</br>
+</br>
+</br>
+
+
+<% if(user) { %>
+<% if (!trainers.some(t => t.user == user.id)) { %>
+  <a href="/pokedex/new">Add Pokedex</a>
+<% } %>
+<% } %>
 <%- include('../partials/footer') %>

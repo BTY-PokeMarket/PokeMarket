@@ -1,4 +1,15 @@
 <%- include('../partials/header') %>
+
+
+<%  { %>
+  <h3><%= pokedex.pokedexName %></h3>
+  <button type="submit">edit</button>
+<% } %>
+
+</br>
+</br>
+</br>
+
 <% pokedex.pokemon.forEach(function(p) { %>
     <%= p.name %>
     <a href="<%= pokedex.id %>/pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
@@ -9,9 +20,6 @@
   </form>
    <% }) %>
 
-
-
-<%= pokedex.pokedexName %>
 <% if (pokedex.userName === user.name) { %>
 <button ><a href="/pokedex/<%= pokedex.id%>/pokemon">Add Pokemon</a></button>
 <br>
