@@ -1,3 +1,4 @@
+const ROOT_URL = 'https://pokeapi.co/api/v2/pokemon'
 const Pokedex = require('../models/pokedex')
 const Pokemon = require('../models/pokemon')
 const User = require('../models/user')
@@ -12,36 +13,40 @@ module.exports = {
 }
 async function pokemonDetail(req,res){
     try{
-        console.log("entering pokedex pokemon details")
-        
+        const pokedex = await Pokedex.find({ user: req.user.id });
+        const foundPokemon = await Pokemon.findById(req.params.id);
+        const pokemon = await fetch(`${ROOT_URL}-species/${foundPokemon.dex}`)
+        .then(res => res.json())
+        const sprite = await fetch(`${ROOT_URL}/${foundPokemon.dex}`)
+        .then(res => res.json())
+        res.render('pokedex/details', {pokemon, sprite, pokedex})
          } catch (err){
            console.log(err);
            res.sendStatus(500);
          }
-    res.render('pokedex/details')
+    
 }
 
 async function showPokemons(req,res){
-    console.log('ENTER HERE');
-    const availablePokemon = await Pokemon.find({ dex: { $gt: 3 } });
+    console.log('ENTER Show Pokemon');
+    const availablePokemon = await Pokemon.find({ dex: { $gt: 0 } });
     const pokedex = await Pokedex.findById(req.params.id);
-    console.log(req.params);
     res.render('pokedex/pokemon', {availablePokemon, pokedex})
 }
 
 async function addPokemon(req,res){
-    try{
-    // const mypokedex = await Pokedex.findById(req.params.id)
-    // mypokedex.pokemon.push(req.body.)
     console.log('Entering Add Pokemon');
-    // const addingPokemon = req.body
-    // const foundPokemon = await Pokemon.findOne({name: addingPokemon})
-    // console.log(foundPokemon);
-    // const pokedex = await Pokedex.findById(req.params.id);
-    // pokedex.pokemon.push(foundPokemon.value);
-    // console.log(pokedex);
-    // res.redirect(`/pokedex/${pokedex._id}`)
-    res.redirect(`pokedex/`)
+    try{
+    const pokedex = await Pokedex.find({ user: req.user.id });
+    console.log(pokedex)
+    const foundPokemon = await Pokemon.find({dex: req.body.pokemonId})
+    const myPokedex = pokedex.pokemon
+    console.log(myPokedex)
+    myPokedex.push(foundPokemon);
+    await pokedex.save();
+
+
+    res.redirect(`/pokemon`)
     } catch (err) {
         console.log(err)
     }

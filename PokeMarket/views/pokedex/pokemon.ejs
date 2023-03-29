@@ -2,7 +2,7 @@
 <body>
         <% if (availablePokemon) { %>
               <% availablePokemon.forEach ((p) => { %>
-              <a href="<%=pokedex._id%>/pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png"></a>
+              <a href="pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png"></a>
               <% }) %>
         <% } %>
 <%- include('../partials/footer') %>

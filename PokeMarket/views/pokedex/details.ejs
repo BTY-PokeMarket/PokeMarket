@@ -4,14 +4,16 @@
 
 <% if (pokemon) { %>
     <p> Displaying Pokemon Info</p>
-    <%= pokemon.flavor_text_entries[1].flavor_text %>
+    <%= pokemon.flavor_text_entries[1].flavor_text %> <br>
     <% if (sprite) { %>
     <img src="<%= sprite.sprites.front_default%>">
   <% } %>
   <%=   %>
+  
+
+  <form action="/pokedex/<%= pokedex.id/pokemon %>" method="POST">
+    <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
+    <button type="submit">Add To Your Pokedex</button>
+  </form>
   <% } %>
-
-  <!-- Create a button to add pokemon -->
-  <!-- Then should populate to my pokedex show -->
-
 <%- include('../partials/footer') %>

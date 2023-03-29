@@ -3,16 +3,7 @@
 <%= pokedex.pokedexName %>
 
 <% if (pokedex.userName === user.name) { %>
-<form id="get-pokemon" action="/pokedex/<%=pokedex._id%>" method="POST">
-<select name="pokemonId">
-    <% pokemon.forEach((p) => {%>
-        <option value="<%=p._id%>"><%=p.name%></option>
-    <% }) %>
-</select>
-<button type="submit">Add Pokemon</button>
-</form>
-
-<button ><a href="/pokedex/<%= pokedex._id%>/pokemon">Add Pokemon</a></button>
+<button ><a href="/pokedex/<%= pokedex.id%>/pokemon">Add Pokemon</a></button>
 
 
 
