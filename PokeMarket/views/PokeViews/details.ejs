@@ -1,14 +1,24 @@
 <%- include('../partials/header') %>
 
 <h1>Details Page</h1>
-
+<% if (user) { %>
 <% if (pokemon) { %>
-    <p> Displaying Pokemon Info</p>
-    <%= pokemon.flavor_text_entries[1].flavor_text %>
+    <p> user is logged in</p>
+    <%= pokemon.flavor_text_entries[1].flavor_text %> <br>
     <% if (sprite) { %>
     <img src="<%= sprite.sprites.front_default%>">
   <% } %>
-  <%=   %>
+  <% } %>
+  <% } else { %>
+    <% if (pokemon) { %>
+      <p> not logged in</p>
+      <%= pokemon.flavor_text_entries[1].flavor_text %> <br>
+      <% if (sprite) { %>
+      <img src="<%= sprite.sprites.front_default%>">
+    <% } %>
+    <a href="/pokemon"> go back</a>
+    <% } %>
   <% } %>
 
 <%- include('../partials/footer') %>
+

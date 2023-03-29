@@ -1,30 +1,42 @@
 <%- include('../partials/header') %>
 
 
-<%  { %>
+<!-- <%  { %>
   <h3><%= pokedex.pokedexName %></h3>
   <button type="submit">edit</button>
-<% } %>
+<% } %> -->
 
 </br>
 </br>
 </br>
+
 
 <% pokedex.pokemon.forEach(function(p) { %>
+  <% if (user) { %>
     <%= p.name %>
     <a href="<%= pokedex.id %>/pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
    </a>
+   <% } else { %>
+    <a href="../pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
+    </a>
+    <% } %>
     <br>
+    <% if (user) { %>
+    <% if (user.name == pokedex.userName) { %>
    <form action="/pokedex/<%= p.id %>?_method=DELETE" method="POST">
     <button type="submit">X</button>
   </form>
+   <% } %>
+   <% } %>
    <% }) %>
+   
 
-<% if (pokedex.userName === user.name) { %>
+<% if (user) { %>
+<% if (pokedex.userName == user.name) { %>
 <button ><a href="/pokedex/<%= pokedex.id%>/pokemon">Add Pokemon</a></button>
 <br>
 <br>
 <br>
 <% } %>
-
+<% } %>
 <%- include('../partials/footer') %>
