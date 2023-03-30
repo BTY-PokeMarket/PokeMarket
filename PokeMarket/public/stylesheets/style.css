@@ -1,14 +1,45 @@
 body {
-  padding: 50px;
+  padding: 40px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(151, 150, 150);
+  background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
   display: block;
-
 }
 
-a {
-  color: #00B7FF;
+.HomePageTitle {
+  text-align: center;
+  font-size: 50px;
+  color: #bd5c17;
+  font-family: 'Eczar', serif;
 }
+
+.pokeball {
+  margin-right: 20px;
+  margin-top:0px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.MainPokemons {
+  display: grid; 
+  justify-content: center;
+  align-content: center;
+  width: calc(100% / 4);
+  border-style:double;
+  border-color:#bd5c17;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+nav {
+  display:block;
+  justify-content: space-around;
+  background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+}
+
 .login {
   display: flex;
   justify-content: center;
@@ -18,10 +49,6 @@ a {
 
 .login img {
   height: 30px;
-}
-
-.BouncingPokemon {
-  display: grid
 }
 
 .cardDetail {
