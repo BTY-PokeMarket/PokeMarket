@@ -1,42 +1,38 @@
 <%- include('../partials/header') %>
 
 <h1><%= pokedex.pokedexName %></h1>
-
-<!-- Pokedex buttons if user logged in -->
-<% if (user) { %>
-  <% if (pokedex.userName == user.name) { %>
-  <button ><a href="/pokedex/<%= pokedex.id%>/pokemon">Add Pokemon</a></button>
-  <br>
   <!-- edit pokedex button -->
 <form action="/pokedex/<%= pokedex.id %>/edit" method="GET">
   <button type="submit">Edit Your Pokedex</button>
 </form>
 <!-- edit pokedex button -->
-<% } %>
-<% } %>
-<!-- Pokedex buttons if user logged in -->
+
+
 <div class="PokeContainer">
-<div class="jumbotron jumbotron-fluid">
+<div class="personalView">
  <% pokedex.pokemon.forEach(function(p) { %>
-  <% if (user) { %>
     <div class="FullCard">
       <div class="card" style="width: 100px;">
-      <!--delete button start-->
-          <% if (user.name == pokedex.userName) { %>
-            <form action="/pokedex/<%= p.id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
-            </form>
-          <% } %>
-       <!-- delete button end-->
         <a href="<%= pokedex.id %>/pokemon/<%= p.id %>/details"><img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png" alt="Card image cap">
         </a>
+        <p><%= p.name %></p>
       </div>
     </div>
-   <% } else { %>
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
-    <% } %>
-    
+    <br>
+    <br>
+    <br>
    <% }) %>
 </div>
+
+      <div class="ADDBUTTON">
+      <% if (user) { %>
+        <% if (pokedex.userName == user.name) { %>
+        <button ><a href="/pokedex/<%= pokedex.id%>/pokemon">Add Pokemon</a></button>
+        <br>
+        <% } %>
+      <% } %>
+      <!-- Pokedex button  -->
+      </div>
+
 </div>
 <%- include('../partials/footer') %>

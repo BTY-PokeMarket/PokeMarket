@@ -38,7 +38,7 @@ body {
 }
 
 .MainPokemons {
-  padding: 10px;
+  padding: 20px;
   align-items: center ;
 }
 
@@ -86,16 +86,37 @@ nav {
 }
 .FullCard {
   display: inline;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 .card {
   display: block;
   background-color: aqua;
+  align-self: center;
+  margin-left: 50px;
+  text-align: center;
 }
 .PokeContainer {
-  margin-top: auto
-  background-image: ;
-  background-color: aqua;
+  margin-top: auto;
+  background-image: url("https://previews.dropbox.com/p/thumb/AB3iMzpx8ZnyCA8hTzrDb3zwyvzB4q7e8R8ECwahQ4izEVV9QuokZdwNvBJBayJC3Osz8YQF5yPTL3hXpR79Tg2wdJ63bxKC8Af_KZWce2XmxCoNBg6mGFuUfItS-ScbwzrTBgGLUmeRQ862FmjH1q2QCNSh6vW9CRFSzUp-YiM7Eh2wp_1fKIqcy881cnasOZv4HjfugoN0Gdyge0guoXqoZq6wexDJ0Cw1E8e6WILN_MdjcPLXpPIMmg86aMRUqa7endbAwCvDzXjeTtFMMF5m8ChMIefXjwVD_6ltxptegjNkIdoX4FvmnGW0t0gVYkg4ZtwZoHifr9IH42FEE4fXygrKnRYBhUPTQCqxE4VzD-PAb4G3Y6eHdQmBQ-liAe0/p.png");
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 652px;
+  width: 405px;
+}
+
+.personalView {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  display: block;
+  align-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+.ADDBUTTON {
+  position: absolute;
+  margin-top: 500px;
 }
