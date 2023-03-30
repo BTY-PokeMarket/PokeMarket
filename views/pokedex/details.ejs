@@ -13,6 +13,12 @@
 
 <% if (pokedex.pokemon.includes(foundPokemon._id)) { %>
   <br>
+  <% if (user.pokedex == pokedex.id) { %>
+    <form action="/pokedex/<%= pokedex.id%>?_method=DELETE" method="POST">
+      <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
+      <button type="submit">Delete Pokemon From Pokedex</button>
+    </form>
+    <% } %>
   <a href="javascript:history.back()">Go Back</a>
   <% } else { %>
     <form action="/pokedex/<%= pokedex.id/pokemon %>" method="POST">

@@ -6,8 +6,9 @@ const User = require('../models/user')
 
 async function deletePokemon(req, res) {
     const pokedex = await Pokedex.findOne({ user: req.user.id });
+    const foundPokemon = await Pokemon.findOne({ dex: req.body.pokemonId })
     thisPokemon = pokedex.pokemon
-    thisPokemon.remove(req.params.id)
+    thisPokemon.remove(foundPokemon)
     pokedex.save().then(() => {
         res.redirect(`/pokedex/${pokedex._id}`)
     }).catch(function (err) {
