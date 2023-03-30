@@ -1,24 +1,11 @@
 <%- include('../partials/header') %>
 <body>
-        <% if (poke) { %>
-          <table>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Pokemon</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
+<div class="BouncingPokemon>
+  <% if (poke) { %>
               <% poke.forEach ((p) => { %>
-                <tr>
-                <td></td>
-                <td><%= p.name %></td>
-              <td><a href="pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png"></a></td>
-              <td></td>
+              <a href="pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png"></a>
               <% }) %>
-              </tr>
         <% } %>
-      </tbody>
-      </table>
+</div>
+        
 <%- include('../partials/footer') %>

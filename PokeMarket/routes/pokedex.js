@@ -7,12 +7,10 @@ const dexCtrl = require('../controllers/pokedex')
 router.delete('/:id', dexCtrl.delete);
 router.delete('/', dexCtrl.deletePokedex)
 
-
-router.post('/:id/edit', dexCtrl.updatePokedexName)
-
 // POST ROUTES
 router.post('/:id', dexCtrl.addPokemon)
 router.post('/', dexCtrl.create)
+router.post('/:id/edit', dexCtrl.updatePokedexName)
 
 // GET ROUTES
 router.get('/new', dexCtrl.new)
