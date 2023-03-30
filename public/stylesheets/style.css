@@ -23,7 +23,14 @@ body {
   justify-content: center;
 }
 
+.jumboContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .jumbotron {
+  align-self: center;
   max-width: 1000px;
   padding: 15px;
   background-color: black;
@@ -32,10 +39,11 @@ body {
 
 .MainPokemons {
   padding: 10px;
+  align-items: center ;
 }
 
 nav {
-  display:block;
+  display: block;
   justify-content: space-around;
   background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
 }
@@ -52,7 +60,6 @@ nav {
 }
 
 .cardDetail {
-  display: flexbox;
   min-width: 200px;
   max-width: 200px;
   height: 300px;
@@ -76,4 +83,19 @@ nav {
   padding: 10px;
   text-align: center;
   align-content: center;
+}
+.FullCard {
+  display: inline;
+}
+.card {
+  display: block;
+  background-color: aqua;
+}
+.PokeContainer {
+  margin-top: auto
+  background-image: ;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
