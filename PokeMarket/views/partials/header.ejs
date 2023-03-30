@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>PokeMarket</title>
-        <nav>
-            <% if (user) { %>
+    <nav>
+        <% if (user) { %>
             <a href="/pokemon">HomePage</a>
             <a href="/trainers">All Trainers</a>
             <% if (user.pokedex) { %>
-            <a href="/pokedex/<%= user.pokedex %>">My Pokedex</a>
+                <a href="/pokedex/<%= user.pokedex %>">My Pokedex</a>  
             <% } %>
-            <a href="/logout">Log Out</a> 
-            <% } else { %>
-                <a href="/pokemon">HomePage</a>
-                <a href="/trainers">All Trainers</a>
-                <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-              <% } %>
-        </nav>
-     <h1>PokeMarket</h1>
+            <a href="/logout">Log Out</a>
+        <% } else { %>
+            <a href="/pokemon">HomePage</a>
+            <a href="/trainers">All Trainers</a>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+    </nav>
+    <h1>PokeMarket</h1>
 </head>

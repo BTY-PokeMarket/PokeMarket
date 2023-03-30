@@ -3,24 +3,22 @@
 <h1>Details Page</h1>
 
 <% if (pokemon) { %>
-    <p> Displaying Pokemon Info</p>
-    <%= pokemon.flavor_text_entries[1].flavor_text %> <br>
-    <% if (sprite) { %>
+  <p> Displaying Pokemon Info</p>
+  <% if (sprite) { %>
     <img src="<%= sprite.sprites.front_default%>">
-  <% } %>
-  <% } %>
-
-
-<!-- DONT CROSS HERE -->
+    <% } %>
+  <%= pokemon.flavor_text_entries[1].flavor_text %> <br>
+    
+        <% } %>
 
 <% if (pokedex.pokemon.includes(foundPokemon._id)) { %>
   <br>
-  <a href="javascript:history.back()" >Go Back</a>
-<% } else { %>
-  <form action="/pokedex/<%= pokedex.id/pokemon %>" method="POST">
-    <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
-    <button type="submit">Add To Your Pokedex</button>
-  </form>
-<% } %>
+  <a href="javascript:history.back()">Go Back</a>
+  <% } else { %>
+    <form action="/pokedex/<%= pokedex.id/pokemon %>" method="POST">
+      <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
+      <button type="submit">Add To Your Pokedex</button>
+    </form>
+    <% } %>
 
 <%- include('../partials/footer') %>

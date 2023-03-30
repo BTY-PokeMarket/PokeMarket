@@ -20,4 +20,5 @@ const pokedexSchema = new Schema({
     timestamps: true
 });
 
+
 module.exports = mongoose.model('Pokedex', pokedexSchema)
