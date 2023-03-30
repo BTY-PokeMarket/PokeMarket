@@ -11,17 +11,17 @@
     
         <% } %>
 
-<% if (pokedex.pokemon.includes(foundPokemon._id)) { %>
+<% if (userPokedex.pokemon.includes(foundPokemon._id)) { %>
   <br>
-  <% if (user.pokedex == pokedex.id) { %>
-    <form action="/pokedex/<%= pokedex.id%>?_method=DELETE" method="POST">
-      <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
-      <button type="submit">Delete Pokemon From Pokedex</button>
-    </form>
-    <% } %>
+  <% if (user.pokedex == userPokedex.id) { %>
+  <form action="/pokedex/<%= userPokedex.id%>?_method=DELETE" method="POST">
+    <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
+    <button type="submit">Delete Pokemon From My Pokedex</button>
+  </form>
+  <% } %>
   <a href="javascript:history.back()">Go Back</a>
   <% } else { %>
-    <form action="/pokedex/<%= pokedex.id/pokemon %>" method="POST">
+    <form action="/pokedex/<%= userPokedex.id/pokemon %>" method="POST">
       <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
       <button type="submit">Add To Your Pokedex</button>
     </form>

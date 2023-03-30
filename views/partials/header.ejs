@@ -11,22 +11,22 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     
-    <nav class="nav nav-pills justify-content-center flex-column flex-sm-row">
-        <img src=/images/4.svg class="pokeball"  width="40" height="30" class="d-inline-block align-top" alt="">
+    <nav class="nav nav-pills nav-fill flex-column flex-sm-row">
+        <img src=images/4.svg class="pokeball"  width="40" height="30" class="d-inline-block align-top" alt="">
         <% if (user) { %>
-            <a class="btn btn-sm" href="/pokemon">HomePage</a>
-            <a class="btn btn-sm" href="/trainers">All Trainers</a>
+            <a class="btn btn-danger btn-sm" href="/pokemon">HomePage</a>
+            <a class="btn btn-danger btn-sm" href="/trainers">All Trainers</a>
             <% if (user.pokedex) { %>
-                <a class="btn btn-sm" href="/pokedex/<%= user.pokedex %>">My Pokedex</a>  
+                <a class="btn btn-danger btn-sm" href="/pokedex/<%= user.pokedex %>">My Pokedex</a>  
             <% } %>
-            <a class="btn btn-sm" href="/logout">Log Out</a>
+            <a class="btn btn-danger btn-sm" href="/logout">Log Out</a>
         <% } else { %>
-            <a class="btn btn-sm" href="/pokemon">HomePage</a>
-            <a class="btn btn-sm" href="/trainers">All Trainers</a>
-            <a class="btn btn-sm" href="/auth/google" class="login">LOG IN&nbsp;</a>
+            <a class="btn btn-danger btn-sm" href="/pokemon">HomePage</a>
+            <a class="btn btn-danger btn-sm" href="/trainers">All Trainers</a>
+            <a class="btn btn-danger btn-sm" href="/auth/google" class="login">LOG IN&nbsp;</a>
             <!-- <img src="https://i.imgur.com/FHjYyi0.png" width="25" height="25"> -->
         <% } %>
-        <img src=/images/4.svg class="pokeball"  width="40" height="30" class="d-flex" alt="">
+        <img src=images/4.svg class="pokeball"  width="40" height="30" class="d-inline-block align-top" alt="">
     </nav>
 </br>
     <h1 class="HomePageTitle">PokeMarket</h1>
