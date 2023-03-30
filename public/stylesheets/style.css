@@ -23,15 +23,15 @@ body {
   justify-content: center;
 }
 
+.jumbotron {
+  max-width: 1000px;
+  padding: 15px;
+  background-color: black;
+  border-radius: 2%;
+}
+
 .MainPokemons {
-  display: grid; 
-  justify-content: center;
-  align-content: center;
-  width: calc(100% / 4);
-  border-style:double;
-  border-color:#bd5c17;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 nav {

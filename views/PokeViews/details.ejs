@@ -2,27 +2,19 @@
 
 <h1><%= pokemon.name %></h1>
 <div class="cardDetail">
-<% if (user) { %>
 <% if (pokemon) { %>
+  <% if (user) { %>
     <p> <a href="/pokemon">Return to All Pokemon</a> </p>
+    <% } %>
     <%= pokemon.flavor_text_entries[1].flavor_text %> <br>
     <% if (sprite) { %>
     <img src="<%= sprite.sprites.front_default%>">
   <% } %>
   <% } %>
-  <% } else { %>
-    <% if (pokemon) { %>
-      <% if (sprite) { %>
-        <div class="pokes">
-          <img src="<%= sprite.sprites.front_default%>"> <br>
-        </div>
-      <% } %>
-      <div class="flavor">
-        <%= pokemon.flavor_text_entries[1].flavor_text %> <br>
-      </div>
-    <% } %>
-  <% } %>
 </div>
+
 <a href="/pokemon"> go back</a>
+
+
 <%- include('../partials/footer') %>
 

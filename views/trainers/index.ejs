@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+<h2>Gym Leaders</h2>
+<div class="container">
+<table>
+  <thead>
+    <tr class="row">
+      <th class="col">Trainer Name</th>
+      <th class="col">Pokedex</th>
+      <th class="col">Go to Page</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% trainers.forEach ((t) => { %>
+      <tr class="row">
+      <td class="col"><%= t.userName %></td>
+      <td class="col"><%= t.pokedexName %></td>
+     <td class="col"><a href="/pokedex/<%= t._id %>">Trainer's Pokedex</a></td>
+    <% }) %>
+    </tr>
+  </tbody>
+</table>
+
+</br>
+</br>
+</br>
+
+
+<% if(user) { %>
+<% if (!trainers.some(t => t.user == user.id)) { %>
+  <a href="/pokedex/new">Add Pokedex</a>
+<% } %>
+<% } %>
+
+</div>
+<%- include('../partials/footer') %>
