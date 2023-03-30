@@ -5,6 +5,7 @@ const User = require('../models/user')
 
 
 async function deletePokemon(req, res) {
+    console.log('Entering deleting pokedex controller')
     const pokedex = await Pokedex.findOne({ user: req.user.id });
     const foundPokemon = await Pokemon.findOne({ dex: req.body.pokemonId })
     thisPokemon = pokedex.pokemon
@@ -18,13 +19,13 @@ async function deletePokemon(req, res) {
 
 async function pokemonDetail(req, res) {
     try {
-        const pokedex = await Pokedex.findOne({ user: req.user.id });
+        const userPokedex = await Pokedex.findOne({ user: req.user.id });
         const foundPokemon = await Pokemon.findById(req.params.id);
         const pokemon = await fetch(`${ROOT_URL}-species/${foundPokemon.dex}`)
             .then(res => res.json())
         const sprite = await fetch(`${ROOT_URL}/${foundPokemon.dex}`)
             .then(res => res.json())
-        res.render('pokedex/details', { pokemon, sprite, pokedex, foundPokemon })
+        res.render('pokedex/details', { pokemon, sprite, userPokedex, foundPokemon })
     } catch (err) {
         console.log(err);
         res.sendStatus(500);
