@@ -14,20 +14,14 @@ module.exports = {
 }
 
 async function deletePokemon (req, res) {
-    console.log('enteringDELETEPOKEMON')
     const pokedex = await Pokedex.findOne({ user: req.user.id });
     thisPokemon = pokedex.pokemon
-    // thisPokemon.findOne({'pokemon._id' : req.params.id})
-
-    console.log(thisPokemon)
-    console.log(req.params.id)
     thisPokemon.remove(req.params.id)
     pokedex.save().then(() => {
         res.redirect(`/pokedex/${pokedex._id}`)
     }).catch(function(err) {
         return next(err)
     })
-    
 }
 
 async function pokemonDetail(req,res){
@@ -37,7 +31,13 @@ async function pokemonDetail(req,res){
         //     pokedex = req.params.id
         // }
         // else vvvvvvvvvvvvvv
+        // req.body should equal pokedex.id
+        console.log(User)
+        console.log(req.query)
+        console.log(req.params)
         const pokedex = await Pokedex.findOne({ user: req.user.id });
+        // const pokedex = await Pokedex.findOne({user: req.query.pokedexId})
+
         console.log(pokedex)
         console.log(pokedex.pokemon)
         const foundPokemon = await Pokemon.findById(req.params.id);
@@ -103,6 +103,12 @@ async function create(req,res) {
     const newPokedex = new Pokedex(req.body); 
     await newPokedex.save();
     console.log(newPokedex._id);
+    console.log(req.user);
+    const user = req.user
+    user.pokedex = newPokedex._id;
+    await user.save();
+    console.log(req.user.pokedex);
+    console.log(req.user);
     res.redirect(`/pokedex/${newPokedex._id}`)
     } catch (err) {
         console.log(err)

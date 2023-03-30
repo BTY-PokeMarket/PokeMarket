@@ -3,7 +3,7 @@
 <h1>Details Page</h1>
 <% if (user) { %>
 <% if (pokemon) { %>
-    <p> user is logged in</p>
+    <p> <a href="/pokemon">Return to All Pokemon</a></p>
     <%= pokemon.flavor_text_entries[1].flavor_text %> <br>
     <% if (sprite) { %>
     <img src="<%= sprite.sprites.front_default%>">

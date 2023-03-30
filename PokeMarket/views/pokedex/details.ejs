@@ -15,7 +15,7 @@
 
 <% if (pokedex.pokemon.includes(foundPokemon._id)) { %>
   <br>
-  <a href="/pokedex/<%= pokedex.id %>">Return Home</a>
+  <a href="javascript:history.back()" >Go Back</a>
 <% } else { %>
   <form action="/pokedex/<%= pokedex.id/pokemon %>" method="POST">
     <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">

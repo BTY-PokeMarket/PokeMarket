@@ -17,11 +17,10 @@
     <a href="<%= pokedex.id %>/pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
    </a>
    <% } else { %>
-    <a href="../pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
-    </a>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png">
     <% } %>
     <br>
-    <% if (user) { %>
+    <% if (user) { %> 
     <% if (user.name == pokedex.userName) { %>
    <form action="/pokedex/<%= p.id %>?_method=DELETE" method="POST">
     <button type="submit">X</button>
