@@ -10,6 +10,11 @@
             <div class="col-md-4">
               <div class="container">
                 <div class="rounded float-left" id="SPRITE"><img class="SPRITE" src="<%= sprite.sprites.front_default%>"></div>
+                <div class="card-text-type"> <p class="card-text-aval <%=foundPokemon.element[0]%>"> <%= foundPokemon.element[0] %></p>
+                  <% if(foundPokemon.element[1]){ %>
+                  <p class="card-text-aval <%=foundPokemon.element[1]%>"> <%= foundPokemon.element[1] %></p>
+                  <% } %>
+                </div>
               </div>
             </div>
             <div class="col-md-8">
@@ -27,29 +32,34 @@
         <% } %>
         <div class="row">
             <div class="FLAVOR">
-              <div><p><%= pokemon.flavor_text_entries[0].flavor_text %></p></div>
+              <div><p><%= pokemon.flavor_text_entries[1].flavor_text %></p></div>
               </div>
             </div>        
       <% } %>
     </div>
   </div>
 <!-- delete and add pokemon from pokedex button -->
+<div class="info-container">
 <% if (userPokedex.pokemon.includes(foundPokemon._id)) { %>
   <br>
   <% if (user.pokedex == userPokedex.id) { %>
+    <div class="center-info">
     <p>You already have this Pokemon in your Pokedex</p>
   <form action="/pokedex/<%= userPokedex.id%>?_method=DELETE" method="POST">
     <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
-    <button type="submit">Delete Pokemon From My Pokedex</button>
+    <button class="functional-button" type="submit">Delete Pokemon From My Pokedex</button>
   </form>
+</div>
   <% } %>
   <% } else { %>
+    <div class="center-info">
     <p>This Pokemon costs <%= foundPokemon.value %> pokecoins. Would you like to add it to your Pokedex?  </p>
     <form action="/pokedex/<%= userPokedex.id/pokemon %>" method="POST">
       <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
-      <button type="submit">Add This Pokemon To Your Pokedex</button>
+      <button class="functional-button" type="submit">Add This Pokemon To Your Pokedex</button>
     </form>
-  
+</div>  
 <% } %>
+</div>
 <!-- delete and add pokemon from pokedex button -->
 <%- include('../partials/footer') %>
