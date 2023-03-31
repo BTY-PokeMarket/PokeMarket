@@ -90,6 +90,7 @@ async function deletePokedex (req,res) {
    try { 
     const user = req.user;
     const p1 = Pokedex.deleteOne({user: req.user})
+    await User.updateOne({_id: req.user.id}, {$unset: {pokedex: 1}})
     let results = await Promise.all([p1]);
     console.log(user)
     console.log(results)
