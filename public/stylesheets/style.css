@@ -279,4 +279,21 @@ a {
 .Ice{
   background-color: #98D8D8;
 }
+.info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.center-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.functional-button {
+  border-radius: 25%;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+}

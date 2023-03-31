@@ -9,6 +9,11 @@
             <div class="col-md-4">
               <div class="container">
                 <div class="rounded float-left" id="SPRITE"><img class="SPRITE" src="<%= sprite.sprites.front_default%>"></div>
+                <div class="card-text-type"> <p class="card-text-aval <%=foundPokemon.element[0]%>"> <%= foundPokemon.element[0] %></p>
+                  <% if(foundPokemon.element[1]){ %>
+                  <p class="card-text-aval <%=foundPokemon.element[1]%>"> <%= foundPokemon.element[1] %></p>
+                  <% } %>
+                </div>
               </div>
             </div>
             <div class="col-md-8">
@@ -26,7 +31,7 @@
         <% } %>
         <div class="row">
             <div class="FLAVOR">
-              <div><p><%= pokemon.flavor_text_entries[0].flavor_text %></p></div>
+              <div><p><%= pokemon.flavor_text_entries[1].flavor_text %></p></div>
               </div>
             </div>        
       <% } %>
