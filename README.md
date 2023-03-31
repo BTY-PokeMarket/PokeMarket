@@ -1,9 +1,7 @@
 <div align="center">
 
 # WELCOME TO PokeMarket
-### Built by: **[Woonchan Jung](https://www.linkedin.com/in/woonchanjung/)**
-### Built by: **[Ryan Q Le](https://www.linkedin.com/in/ryanqle/)**
-### Built by: **[Justin Navarro](https://www.linkedin.com/in/justin-navarro/)**
+### Built by: **[Woonchan Jung](https://www.linkedin.com/in/woonchanjung/), [Ryan Q Le](https://www.linkedin.com/in/ryanqle/), [Justin Navarro](https://www.linkedin.com/in/justin-navarro/)**
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 ![Maintainer](https://img.shields.io/badge/Maintainer-woonchanjung-blue)
@@ -26,6 +24,7 @@
 
 
 ## **[CLICK HERE TO CHECKOUT THE POKeMARKET!](https://pokemarket.herokuapp.com/pokemon)**
+
 </div>
 
 ## What is PokeMarket?
@@ -112,7 +111,9 @@ This code is a very convienent way to navigate back one page in your site. Quite
 
 ## Roadmap
 
-We plan on updating the styling a bit more to be a better reflection of a Pokedex, however we spent a large portion of the week writing and debugging our code. 
+**[TRELLO](https://trello.com/invite/b/tsHLh6S1/ATTIf59bd7d87bd0b371880b8ee87fba221dC1E8C489/pokemarket)**
+
+We plan on updating the styling a bit more to be a better reflection of a Pokedex.
 
 Icebox features planned for the near future
 - Naming Individual Pokemon
@@ -123,14 +124,6 @@ Icebox features planned for the near future
 - Ability to sort by categories
 - Music / Sound Effects on individual Pokemon
 
-## Technologies Used
-- Javascript
-- Node.js
-- CSS
-- MongoDB
-- Express
-- EJS
-- BootStrap
 
 **Authors and Acknowledgements**
 
