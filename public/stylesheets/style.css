@@ -1,7 +1,6 @@
 body {
   padding: 40px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
   display: block;
 }
 
@@ -28,7 +27,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+
 }
 
 .jumbotron {
@@ -95,7 +94,7 @@ nav {
   display: block;
   background-color: black;
   align-self: center;
-  margin-left: 50px;
+  margin-left: 25px;
   text-align: center;
 }
 .PokeContainer{
@@ -139,10 +138,17 @@ nav {
 
 .FLAVOR {
   text-align: center;
+  margin-left: 50px;
+}
+
+#PokedexSprite {
+  height: 150px;
+  width: 150px
 }
 
 .SPRITE {
   height: 200px;
+  width: 200px;
 }
 
 .nav-item {
