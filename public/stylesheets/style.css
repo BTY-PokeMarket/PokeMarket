@@ -1,6 +1,7 @@
 body {
   padding: 40px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(189, 195, 197);
   display: block;
 }
 
@@ -158,7 +159,7 @@ nav {
 
 th {
   font-size: large;
-  background-color: #9b4f19;
+  background-color: rgb(130, 0, 0);
   color: white;
   border: 2px black;
 }
@@ -279,4 +280,21 @@ a {
 .Ice{
   background-color: #98D8D8;
 }
+.info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.center-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.functional-button {
+  border-radius: 20%;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+}
