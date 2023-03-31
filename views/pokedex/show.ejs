@@ -19,8 +19,13 @@
  <% pokedex.pokemon.forEach(function(p) { %>
     <div class="FullCard">
       <div class="card" style="width: 100px;">
+        <% if (user) { %>
         <a href="<%= pokedex.id %>/pokemon/<%= p.id %>/details"><img class="card-img-top" id="PokedexSprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png" alt="Card image cap">
         </a>
+        <% } else { %>
+          <img class="card-img-top" id="PokedexSprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png" alt="Card image cap">
+        </a>
+        <% } %>
       </div>
     </div>
     <br>
