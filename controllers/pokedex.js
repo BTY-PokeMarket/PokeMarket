@@ -47,6 +47,7 @@ async function addPokemon(req, res) {
         myPokedex.push(foundPokemon);
         if(pokedex.pokecoins >= 0){
             pokedex.pokecoins -= foundPokemon.value;
+            pokedex.totalCost += foundPokemon.value;
         }
         await pokedex.save();
         res.redirect(`/pokedex/${pokedex._id}`)
@@ -72,6 +73,7 @@ async function create(req, res) {
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
         req.body.pokecoins = 50;
+        req.body.totalCost = 0;
         const newPokedex = new Pokedex(req.body);
         await newPokedex.save();
         const user = req.user
