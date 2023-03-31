@@ -119,7 +119,6 @@ nav {
 }
 .ADDBUTTON {
   position: absolute;
-<<<<<<< HEAD
   margin-top: 450px;
   margin-left: 200px;
 }
@@ -161,8 +160,6 @@ td.col {
 
 a {
   font-weight: bold;
-=======
-  margin-top: 500px;
 }
 
 .pokemon-container-aval{
@@ -267,5 +264,4 @@ a {
 
 .Ice{
   background-color: #98D8D8;
->>>>>>> dc8e2bec9648f2c8532f41bfc87c95429bf6ffec
 }
