@@ -5,7 +5,6 @@ const User = require('../models/user')
 
 
 async function deletePokemon(req, res) {
-    console.log('Entering deleting pokedex controller')
     const pokedex = await Pokedex.findOne({ user: req.user.id });
     const foundPokemon = await Pokemon.findOne({ dex: req.body.pokemonId })
     thisPokemon = pokedex.pokemon
