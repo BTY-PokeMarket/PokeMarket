@@ -1,13 +1,19 @@
 <%- include('../partials/header') %>
 
+<% if (user) { %>
+  <% if (pokedex.userName == user.name) { %>
+      <!-- edit pokedex button -->
+    <form action="/pokedex/<%= pokedex.id %>/edit" method="GET">
+      <button type="submit">Edit Your Pokedex</button>
+    </form>
+    <!-- edit pokedex button -->
+  <% } %>
+<% } %>
+
 <h1><%= pokedex.pokedexName %></h1>
-  <!-- edit pokedex button -->
-<form action="/pokedex/<%= pokedex.id %>/edit" method="GET">
-  <button type="submit">Edit Your Pokedex</button>
-</form>
-<!-- edit pokedex button -->
 
 
+<div class="pokedex">
 <div class="PokeContainer">
 <div class="personalView">
  <% pokedex.pokemon.forEach(function(p) { %>
@@ -31,8 +37,8 @@
         <br>
         <% } %>
       <% } %>
-      <!-- Pokedex button  -->
       </div>
 
+</div>
 </div>
 <%- include('../partials/footer') %>

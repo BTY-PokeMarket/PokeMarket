@@ -7,13 +7,14 @@ body {
 
 .HomePageTitle {
   text-align: center;
-  font-size: 50px;
-  color: #bd5c17;
+  font-size: 60px;
+  color: #bd1717;
   font-family: 'Eczar', serif;
 }
 
 .pokeball {
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
   margin-top:0px;
 }
 
@@ -27,13 +28,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
 
 .jumbotron {
   align-self: center;
   max-width: 1000px;
   padding: 15px;
-  background-color: black;
+  background-color: rgb(158, 203, 219);
   border-radius: 2%;
 }
 
@@ -45,7 +47,6 @@ body {
 nav {
   display: block;
   justify-content: space-around;
-  background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
 }
 
 .login {
@@ -92,14 +93,14 @@ nav {
 }
 .card {
   display: block;
-  background-color: aqua;
+  background-color: black;
   align-self: center;
   margin-left: 50px;
   text-align: center;
 }
-.PokeContainer {
+.PokeContainer{
   margin-top: auto;
-  background-image: url("https://previews.dropbox.com/p/thumb/AB3iMzpx8ZnyCA8hTzrDb3zwyvzB4q7e8R8ECwahQ4izEVV9QuokZdwNvBJBayJC3Osz8YQF5yPTL3hXpR79Tg2wdJ63bxKC8Af_KZWce2XmxCoNBg6mGFuUfItS-ScbwzrTBgGLUmeRQ862FmjH1q2QCNSh6vW9CRFSzUp-YiM7Eh2wp_1fKIqcy881cnasOZv4HjfugoN0Gdyge0guoXqoZq6wexDJ0Cw1E8e6WILN_MdjcPLXpPIMmg86aMRUqa7endbAwCvDzXjeTtFMMF5m8ChMIefXjwVD_6ltxptegjNkIdoX4FvmnGW0t0gVYkg4ZtwZoHifr9IH42FEE4fXygrKnRYBhUPTQCqxE4VzD-PAb4G3Y6eHdQmBQ-liAe0/p.png");
+  background-image: url("/images/Pokedex.png");
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,5 +119,45 @@ nav {
 }
 .ADDBUTTON {
   position: absolute;
-  margin-top: 500px;
+  margin-top: 450px;
+  margin-left: 200px;
+}
+
+.pokedex {
+  margin: auto;
+}
+
+.DELPOKBUTTON {
+  background-color: red;
+}
+
+#STATS {
+  padding-right: 50px;
+  width: 400px;
+  text-align: center;
+}
+
+.FLAVOR {
+  text-align: center;
+}
+
+.SPRITE {
+  height: 200px;
+}
+
+.nav-item {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+th {
+  font-size: large;
+}
+
+td.col {
+  font-size:medium;
+}
+
+a {
+  font-weight: bold;
 }
