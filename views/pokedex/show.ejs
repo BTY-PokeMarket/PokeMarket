@@ -1,5 +1,12 @@
 <%- include('../partials/header') %>
 
+<a href="javascript:history.back()"> < Go Back To All Trainers</a>
+<br>
+<br>
+
+
+
+<h2><%= pokedex.pokedexName %></h2>
 <% if (user) { %>
   <% if (pokedex.userName == user.name) { %>
       <!-- edit pokedex button -->
@@ -9,8 +16,6 @@
     <!-- edit pokedex button -->
   <% } %>
 <% } %>
-
-<h1><%= pokedex.pokedexName %></h1>
 
 
 <div class="pokedex">
