@@ -33,10 +33,9 @@ async function create(req, res) {
 // removes the reference of the user's deleted pokedex from the user database
 async function deletePokedex(req, res) {
     try {
-        const user = req.user;
         const p1 = Pokedex.deleteOne({ user: req.user })
         await User.updateOne({ _id: req.user.id }, { $unset: { pokedex: 1 } })
-        let results = await Promise.all([p1]);
+        await Promise.all([p1]);
         res.redirect('/trainers')
     } catch (err) {
         console.log(err)
