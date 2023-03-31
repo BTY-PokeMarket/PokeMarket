@@ -1,32 +1,30 @@
 <%- include('../partials/header') %>
 
 <div class="TrainerPage">
-  <h2>Gym Leaders</h2>
-  <div class="container GymLeaderBoard">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr class="row">
-          <th class="col">Trainer Name</th>
-          <th class="col">Pokedex</th>
-          <th class="col">Go to Page</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% trainers.forEach((t) => { %>
-          <tr class="row">
-            <td class="col"><%= t.userName %></td>
-            <td class="col"><%= t.pokedexName %></td>
-            <td class="col"><a href="/pokedex/<%= t._id %>">Trainer's Pokedex</a></td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<h2>Gym Leaders</h2>
+<div class="container GymLeaderBoard">
+<table class="table table-striped">
+  <thead>
+    <tr class="row">
+      <th class="col">Trainer Name</th>
+      <th class="col">Pokedex</th>
+      <th class="col">Number of Pokemon</th>
+      <th class="col">Go to Page</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% trainers.forEach ((t) => { %>
+      <tr class="row">
+      <td class="col"><%= t.userName %></td>
+      <td class="col"><%= t.pokedexName %></td>
+      <td class="col"><%= t.pokemon.length%></td>
+     <td class="col"><a href="/pokedex/<%= t._id %>">Trainer's Pokedex</a></td>
+    <% }) %>
+    </tr>
+  </tbody>
+</table>
 
-</br>
-</br>
-</br>
+</br></br></br>
 
 
 <% if(user) { %>

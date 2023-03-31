@@ -158,6 +158,14 @@ nav {
 
 th {
   font-size: large;
+  background-color: #9b4f19;
+  color: white;
+  border: 2px black;
+}
+
+table td, table th {
+  border: 1px solid black;
+  border-top: 2px solid black;
 }
 
 td.col {
@@ -271,3 +279,4 @@ a {
 .Ice{
   background-color: #98D8D8;
 }
+

@@ -44,10 +44,12 @@
   </form>
   <% } %>
   <% } else { %>
+    <p>This Pokemon costs <%= foundPokemon.value %> pokecoins. Would you like to add it to your Pokedex?  </p>
     <form action="/pokedex/<%= userPokedex.id/pokemon %>" method="POST">
       <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
       <button type="submit">Add This Pokemon To Your Pokedex</button>
     </form>
+  
 <% } %>
 <!-- delete and add pokemon from pokedex button -->
 <%- include('../partials/footer') %>

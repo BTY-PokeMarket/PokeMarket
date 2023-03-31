@@ -1,22 +1,23 @@
 <%- include('../partials/header') %>
 
-<a href="javascript:history.back()"> < Go Back To All Trainers</a>
+<a href="javascript:history.back()"> < Go Back </a>
 <br>
 <br>
 
 
-
-<h2><%= pokedex.pokedexName %></h2>
+<h2>Pokedex Name: <%= pokedex.pokedexName %></h2>
 <% if (user) { %>
   <% if (pokedex.userName == user.name) { %>
+    <p>You currently have <%= pokedex.pokecoins %> pokecoins left</p>
       <!-- edit pokedex button -->
     <form action="/pokedex/<%= pokedex.id %>/edit" method="GET">
-      <button type="submit">Edit Your Pokedex</button>
+      <button type="submit">Edit Pokedex Name</button>
     </form>
     <!-- edit pokedex button -->
   <% } %>
 <% } %>
 
+<br>
 
 <div class="pokedex">
 <div class="PokeContainer">
