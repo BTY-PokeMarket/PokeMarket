@@ -37,18 +37,31 @@ New users will receive 50 pokecoins when they create a Pokedex!
 
 You'll be able to check out details such as the stats of your favorite Pokemon or how many Pokemon each individual user has. 
 
-You can also check out other peoples Pokedex collection.
+You can also check out other people's Pokedex collection.
 
 <br />
 
 ## How to Use The App
 
+First Log In Using a Google Account and create a Pokedex:
 
-<br />
-<div align="center">
+![LOGIN AND CREATE DEX](https://user-images.githubusercontent.com/107282884/229020774-1a244e1f-c0b0-459f-93ef-ff2aff930c23.gif)
 
-</div>
-<br />
+Then Add Pokemon to your Pokedex!
+
+![Add PokeMON TO POKEDEX](https://user-images.githubusercontent.com/107282884/229021275-e0912f5d-b6b1-4b39-95e6-5733ca3f1622.gif)
+
+You can also delete Pokemon from your Pokedex:
+
+![DELETE POKE](https://user-images.githubusercontent.com/107282884/229021883-75e65d8c-0760-4a70-b051-04e4203a748c.gif)
+
+You can view a detailed look at any of the Pokemons base stats as well:
+
+![Screenshot 2023-03-30 at 9 35 41 PM](https://user-images.githubusercontent.com/107282884/229023571-eb029f35-f25c-45cd-8661-318335212e16.png)
+
+**  **
+
+
 
 ## Features Added
 
