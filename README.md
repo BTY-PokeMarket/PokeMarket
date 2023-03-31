@@ -31,8 +31,9 @@
 </div>
 
 ## What is PokeMarket
+PokeMarket is your own personal Pokedex that lets you save a collection of your favorite Pokemon using our sites own currency: Pokecoins! 
 
-
+Youll be able to check out details such as stats of your favorite Pokemon. 
 <br />
 
 ## How to Use The App
