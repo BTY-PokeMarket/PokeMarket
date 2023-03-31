@@ -2,7 +2,11 @@
 
 <body>
 <div class="pokemon-container-aval">
-<% if (availablePokemon) { %>
+      <% if (pokedex.pokecoins <= 0) { %>
+            <h1>YOU ARE OUT OF POKECOINS
+            </h1>
+            <% } %>
+            <% if (availablePokemon) { %>
 <% availablePokemon.forEach ((p)=> { %>
 
       <div class="card-aval">
