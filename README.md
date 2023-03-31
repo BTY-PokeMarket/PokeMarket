@@ -27,13 +27,18 @@
 ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 
-## **[CLICK HERE](https://ryanqle.github.io/SimonSays/)**
+## **[CLICK HERE](https://pokemarket.herokuapp.com/pokemon)**
 </div>
 
-## What is PokeMarket
+## What is PokeMarket?
 PokeMarket is your own personal Pokedex that lets you save a collection of your favorite Pokemon using our sites own currency: Pokecoins! 
 
-Youll be able to check out details such as stats of your favorite Pokemon. 
+New users will receive 50 pokecoins when they create a Pokedex!
+
+You'll be able to check out details such as the stats of your favorite Pokemon or how many Pokemon each individual user has. 
+
+You can also check out other peoples Pokedex collection.
+
 <br />
 
 ## How to Use The App
