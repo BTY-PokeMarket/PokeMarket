@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<a href="javascript:history.back()"> < Go Back </a>
 <h1><Details></h1>
   <div class="jumboContainer">
   <div class="jumbotron jumbotron-fluid">
@@ -42,11 +43,10 @@
     <button type="submit">Delete Pokemon From My Pokedex</button>
   </form>
   <% } %>
-  <a href="javascript:history.back()">Go Back</a>
   <% } else { %>
     <form action="/pokedex/<%= userPokedex.id/pokemon %>" method="POST">
       <input type="hidden" name="pokemonId" value="<%= pokemon.id %>">
-      <button type="submit">Add To Your Pokedex</button>
+      <button type="submit">Add This Pokemon To Your Pokedex</button>
     </form>
 <% } %>
 <!-- delete and add pokemon from pokedex button -->
