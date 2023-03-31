@@ -1,19 +1,19 @@
 body {
   padding: 40px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
   display: block;
 }
 
 .HomePageTitle {
   text-align: center;
-  font-size: 50px;
-  color: #bd5c17;
+  font-size: 60px;
+  color: #bd1717;
   font-family: 'Eczar', serif;
 }
 
 .pokeball {
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
   margin-top:0px;
 }
 
@@ -27,25 +27,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .jumbotron {
   align-self: center;
   max-width: 1000px;
   padding: 15px;
-  background-color: black;
+  background-color: rgb(158, 203, 219);
   border-radius: 2%;
 }
 
 .MainPokemons {
-  padding: 10px;
+  padding: 20px;
   align-items: center ;
 }
 
 nav {
   display: block;
   justify-content: space-around;
-  background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
 }
 
 .login {
@@ -86,16 +86,188 @@ nav {
 }
 .FullCard {
   display: inline;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 .card {
   display: block;
-  background-color: aqua;
+  background-color: black;
+  align-self: center;
+  margin-left: 25px;
+  text-align: center;
 }
-.PokeContainer {
-  margin-top: auto
-  background-image: ;
-  background-color: aqua;
+.PokeContainer{
+  margin-top: auto;
+  background-image: url("/images/Pokedex.png");
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 652px;
+  width: 405px;
+}
+
+.personalView {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  display: block;
+  align-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+.ADDBUTTON {
+  position: absolute;
+  margin-top: 450px;
+  margin-left: 200px;
+}
+
+.pokedex {
+  margin: auto;
+}
+
+.DELPOKBUTTON {
+  background-color: red;
+}
+
+#STATS {
+  padding-right: 50px;
+  width: 400px;
+  text-align: center;
+}
+
+.FLAVOR {
+  text-align: center;
+  margin-left: 50px;
+}
+
+#PokedexSprite {
+  height: 150px;
+  width: 150px
+}
+
+.SPRITE {
+  height: 200px;
+  width: 200px;
+}
+
+.nav-item {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+th {
+  font-size: large;
+}
+
+td.col {
+  font-size:medium;
+}
+
+a {
+  font-weight: bold;
+}
+
+.pokemon-container-aval{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin-top: 1rem;
+}
+.card-aval {
+  display: block;
+  align-self: self-end;
+  text-align: center;
+  width: 10rem;
+  padding: 0 .25rem 1rem .25rem;
+} 
+
+.card-image-top-aval{
+  max-width: 8rem;
+  min-width: 5rem;
+}
+
+.card-body-aval{
+  margin-top: 1rem;
+  border: 1px solid black;
+  border-top: 3px solid black;
+  border-radius: 5%;
+  padding-bottom: .5rem;
+}
+
+.card-text-type {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card-text-aval{
+  border: 2px solid white;
+  border-radius: .5rem;
+  padding: 0 .5rem 0 .5rem;
+  margin: auto;
+}
+
+.Rock{
+  background-color: #B8A038;
+}
+
+.Fire{
+  background-color: #F08030;
+}
+
+.Grass{
+  background-color: #78C850;
+}
+
+.Poison{
+  background-color: #A040A0;
+}
+
+.Bug{
+  background-color: #A8B820;
+}
+
+.Flying{
+  background-color: #A890F0;
+}
+
+.Normal{
+  background-color: #C6C6A7;
+}
+
+.Psychic{
+  background-color: #F85888;
+}
+
+.Fairy{
+  background-color: #EE99AC;
+}
+
+.Water{
+  background-color: #6890F0;
+}
+
+.Electric{
+  background-color: #F8D030;
+}
+
+.Dragon{
+  background-color: #7038F8;
+}
+
+.Ground{
+  background-color: #E0C068;
+}
+
+.Fighting{
+  background-color: #C03028;
+}
+
+.Ghost{
+  background-color: #705898;
+}
+
+.Ice{
+  background-color: #98D8D8;
 }

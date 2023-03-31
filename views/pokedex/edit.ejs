@@ -1,17 +1,19 @@
 <%- include('../partials/header') %>
 
-<h1>HELLLOOOOOO</h1>
+<h1>Update Your Pokedex Name</h1>
 
 <form action="/pokedex/<%= user.pokedex %>/edit" method="POST">
-  <label>Pokedex Name:
+  <label>New Pokedex Name:
     <input type="text" placeholder="Enter New Pokedex Name" name="pokedexName">
-  </label><br>
+  </label>
   <button type="submit">Update Pokedex Name</button>
 </form>
 
 
+<br><br><br><br>
+
 <form action="/pokedex?_method=DELETE" method="POST">
-  <button type="submit">Delete Your Pokedex</button>
+  <button class="DELPOKBUTTON" type="submit">Delete Your Pokedex</button>
 </form>
 
 <%- include('../partials/footer') %>
