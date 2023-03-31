@@ -1,21 +1,36 @@
 <%- include('../partials/header') %>
 
-<h1><%= pokedex.pokedexName %></h1>
-  <!-- edit pokedex button -->
-<form action="/pokedex/<%= pokedex.id %>/edit" method="GET">
-  <button type="submit">Edit Your Pokedex</button>
-</form>
-<!-- edit pokedex button -->
+<a href="javascript:history.back()"> < Go Back To All Trainers</a>
+<br>
+<br>
 
 
+
+<h2><%= pokedex.pokedexName %></h2>
+<% if (user) { %>
+  <% if (pokedex.userName == user.name) { %>
+      <!-- edit pokedex button -->
+    <form action="/pokedex/<%= pokedex.id %>/edit" method="GET">
+      <button type="submit">Edit Your Pokedex</button>
+    </form>
+    <!-- edit pokedex button -->
+  <% } %>
+<% } %>
+
+
+<div class="pokedex">
 <div class="PokeContainer">
 <div class="personalView">
  <% pokedex.pokemon.forEach(function(p) { %>
     <div class="FullCard">
       <div class="card" style="width: 100px;">
-        <a href="<%= pokedex.id %>/pokemon/<%= p.id %>/details"><img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png" alt="Card image cap">
+        <% if (user) { %>
+        <a href="<%= pokedex.id %>/pokemon/<%= p.id %>/details"><img class="card-img-top" id="PokedexSprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png" alt="Card image cap">
         </a>
-        <p><%= p.name %></p>
+        <% } else { %>
+          <img class="card-img-top" id="PokedexSprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= p.dex %>.png" alt="Card image cap">
+        </a>
+        <% } %>
       </div>
     </div>
     <br>
@@ -31,8 +46,8 @@
         <br>
         <% } %>
       <% } %>
-      <!-- Pokedex button  -->
       </div>
 
+</div>
 </div>
 <%- include('../partials/footer') %>
