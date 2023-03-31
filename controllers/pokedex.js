@@ -5,7 +5,6 @@ const User = require('../models/user')
 
 
 async function deletePokemon(req, res) {
-    console.log('Entering deleting pokedex controller')
     const pokedex = await Pokedex.findOne({ user: req.user.id });
     const foundPokemon = await Pokemon.findOne({ dex: req.body.pokemonId })
     thisPokemon = pokedex.pokemon
@@ -34,7 +33,9 @@ async function pokemonDetail(req, res) {
 
 async function showPokemons(req, res) {
     const pokedex = await Pokedex.findById(req.params.id);
-    const availablePokemon = await Pokemon.find({ _id: { $nin: pokedex.pokemon } }).sort('dex');
+    const availablePokemon = await Pokemon.find(
+        { _id: { $nin: pokedex.pokemon }, value: { $lte: pokedex.pokecoins } }
+      ).sort('dex');
     res.render('pokedex/pokemon', { availablePokemon, pokedex })
 }
 
@@ -44,6 +45,9 @@ async function addPokemon(req, res) {
         const foundPokemon = await Pokemon.findOne({ dex: req.body.pokemonId })
         const myPokedex = pokedex.pokemon
         myPokedex.push(foundPokemon);
+        if(pokedex.pokecoins >= 0){
+            pokedex.pokecoins -= foundPokemon.value;
+        }
         await pokedex.save();
         res.redirect(`/pokedex/${pokedex._id}`)
     } catch (err) {
