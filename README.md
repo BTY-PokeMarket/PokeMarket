@@ -1,7 +1,5 @@
 <div align="center">
 
-
-
 # WELCOME TO PokeMarket
 ### Built by: **[Woonchan Jung](https://www.linkedin.com/in/woonchanjung/)**
 ### Built by: **[Ryan Q Le](https://www.linkedin.com/in/ryanqle/)**
@@ -27,7 +25,7 @@
 ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 
-## **[CLICK HERE](https://pokemarket.herokuapp.com/pokemon)**
+## **[CLICK HERE TO CHECKOUT THE POKeMARKET!](https://pokemarket.herokuapp.com/pokemon)**
 </div>
 
 ## What is PokeMarket?
@@ -41,7 +39,7 @@ You can also check out other people's Pokedex collection.
 
 <br />
 
-## How to Use The App
+## How to Use PokeMarket
 
 First Log In Using a Google Account and create a Pokedex:
 
@@ -62,23 +60,93 @@ You can view a detailed look at any of the Pokemons base stats as well:
 **  **
 
 
+#### Favorite Snippets of Code
+```
+async function create(req, res) {
+    try {
+        req.body.user = req.user._id;
+        req.body.userName = req.user.name;
+        req.body.pokecoins = 50;
+        req.body.totalCost = 0;
+        const newPokedex = new Pokedex(req.body);
+        await newPokedex.save();
+        const user = req.user
+        user.pokedex = newPokedex._id;
+        await user.save();
+        res.redirect(`/pokedex/${newPokedex._id}`)
+    } catch (err) {
+        console.log(err)
+        res.redirect('pokedex/new');
+    }
+}
+```
 
-## Features Added
+This block of code was one of the main issues that halted the progression of our project. This is the function that creates a pokedex tied specifically to that user. Originally we tried to use OAuth to create a Pokedex for a user that logged in, but we werent able to access or manipulate the id of that specific pokedex when the user was created. This code allowed us to attach a pokedex to a user and not only reference back to it but manipulate it as well.     
 
+```
+async function addPokemon(req, res) {
+    try {
+        const pokedex = await Pokedex.findOne({ user: req.user.id });
+        const foundPokemon = await Pokemon.findOne({ dex: req.body.pokemonId })
+        const myPokedex = pokedex.pokemon
+        myPokedex.push(foundPokemon);
+        if(pokedex.pokecoins >= 0){
+            pokedex.pokecoins -= foundPokemon.value;
+            pokedex.totalCost += foundPokemon.value;
+        }
+        await pokedex.save();
+        res.redirect(`/pokedex/${pokedex._id}`)
+    } catch (err) {
+        console.log(err)
+    }
+}
+```
 
-## Planned Updates & Known Bugs
+This function is the one that makes our app a "PokeMarket" by handling the "buying" functionality of the Pokecoins. We started users off with 50 Pokecoins for logging in and creating a new pokedex. When you try to add a Pokemon to your Pokedex the value of that Pokemon is deducted from your Pokecoins. 
 
-Please feel free to reach out and send issues about suggestions or bugs!
+#Honorable Mention of code:#
+```
+<a href="javascript:history.back()"> < Go Back </a>
+```
+This code is a very convienent way to navigate back one page in your site. Quite literally one of our (mainly Justin's) favorite pieces of code.  
 
-<br />
+## Roadmap
 
-| Updates | Bugs |
+We plan on updating the styling a bit more to be a better reflection of a Pokedex, however we spent a large portion of the week writing and debugging our code. 
 
-<br />
+Icebox features planned for the near future
+- Naming Individual Pokemon
+- Trading functionality between Users
+- Comments and Likes on each persons Pokedex
+- Query to search for a Pokemon
+- Adding more than 1st Gen Pokemon
+- Ability to sort by categories
+- Music / Sound Effects on individual Pokemon
+
+## Technologies Used
+- Javascript
+- Node.js
+- CSS
+- MongoDB
+- Express
+- EJS
+- BootStrap
+
+**Authors and Acknowledgements**
+
+Authors:
+- John
+- Justin
+- Ryan
+
+Acknowledgements: 
+- Kenneth C. (Lead Instructor)
+- Matthew G. 
+- Evan M.
+- Payne F.
 
 ### About This Project
+
+This is our 2nd project to demonstrate our ability to work in groups, utilize MongoDB/Mongoose and NodeJS/ExpressJS frameworks, and build a User Centric Application with CRUD functionality and Authentication using OAuth.
+
 Written for **General Assembly Software Engineering Immersive Bootcamp**
-
-
-#### Favorite Snippets of Code
-
