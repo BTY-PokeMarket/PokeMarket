@@ -20,7 +20,7 @@ async function show(req, res, next) {
     const sprite = await fetch(`${ROOT_URL}/${foundPokemon.dex}`)
       .then(res => res.json())
 
-    res.render('PokeViews/details', { pokemon, sprite })
+    res.render('PokeViews/details', { pokemon, sprite, foundPokemon })
   } catch (err) {
     console.log(err);
     res.sendStatus(500);
