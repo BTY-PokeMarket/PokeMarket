@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const pokedexSchema = new Schema({
     pokedexName: String,
     numberOfPokemon: Number,
-    totolCost: Number,
     pokemon: [{
         type: Schema.Types.ObjectId,
         ref: 'Pokemon'
@@ -15,7 +14,8 @@ const pokedexSchema = new Schema({
         ref: 'User'
     },
     userName: String,
-    pokecoins: Number
+    pokecoins: Number,
+    totalCost: Number
 }, {
     timestamps: true
 });
