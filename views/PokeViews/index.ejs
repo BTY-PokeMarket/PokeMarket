@@ -1,15 +1,28 @@
 <%- include('../partials/header') %>
 <body>
-
-<div class="jumboContainer">
-  <div class="jumbotron jumbotron-fluid">
-  <% if (poke) { %>
-              <% poke.forEach ((p) => { %>
-              <a class="MainPokemons outer-box inner-box" href="pokemon/<%= p.id %>/details"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/<%= p.dex %>.gif" height="50"></a>
-              <% }) %>
-        <% } %>
+  <div class="jumboContainer">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="row">
+        <% if (poke) { %> <% poke.forEach((p) => { %>
+        <div class="col-md-3">
+          <div class="card">
+            <a href="pokemon/<%= p.id %>/details">
+              <img
+                class="card-img-top"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/<%= p.dex %>.gif"
+                alt="Pokemon Image"
+              />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title"><%= p.name %></h5>
+              <p class="card-text">Pokemon ID: <%= p.id %></p>
+            </div>
+          </div>
+        </div>
+        <% }) %> <% } %>
+      </div>
+    </div>
   </div>
-</div>
 
-        
-<%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>
+</body>
