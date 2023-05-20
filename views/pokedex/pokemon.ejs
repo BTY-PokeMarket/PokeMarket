@@ -4,35 +4,28 @@
 <a href="javascript:history.back()"> < Go Back </a>
 <div class="pokemon-container-aval">
       <% if (pokedex.pokecoins <= 0) { %>
-            <h1>YOU ARE OUT OF POKECOINS
-            </h1>
-            <% } %>
-            <% if (availablePokemon) { %>
-<% availablePokemon.forEach ((p)=> { %>
-
-      <div class="card-aval">
-            <a href="pokemon/<%= p.id %>/details">
-            <img class="card-img-top-aval" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/<%= p.dex %>.gif">
-            </a>
-                  <div class="card-body-aval">
-                  <h5 class="card-title-aval"> <%= p.name %></h5>
-                  <div class="card-text-type">
-                  <p class="card-text-aval <%=p.element[0]%>"> <%= p.element[0] %></p>
-                  <% if(p.element[1]){ %>
-                  <p class="card-text-aval <%=p.element[1]%>"> <%= p.element[1] %></p>
-                  <% } %>
-            </div>
-      </div>
-
-      
-      </div>
-
-<% }) %>
+            <h1>YOU ARE OUT OF POKECOINS</h1>
       <% } %>
-
+      <% if (availablePokemon) { %>
+            <% availablePokemon.forEach ((p)=> { %>
+                  <div class="card-aval">
+                  <a href="pokemon/<%= p.id %>/details">
+                  <img class="card-img-top-aval" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/<%= p.dex %>.gif">
+                  </a>
+                  <div class="card-body-aval">
+                        <h5 class="card-title-aval"> <%= p.name %></h5>
+                        <div class="card-text-type">
+                              <p class="card-text-aval <%=p.element[0]%>"> <%= p.element[0] %></p>
+                        <% if(p.element[1]){ %>
+                              <p class="card-text-aval <%=p.element[1]%>"> <%= p.element[1] %></p>
+                        <% } %>
+                        </div>
+                  </div>
+                  </div>
+            <% }) %>
+      <% } %>
 </div>
-
-            <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
 
 
             
